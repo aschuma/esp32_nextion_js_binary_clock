@@ -1,0 +1,2 @@
+https://github.com/tkopacki/mongoose-string-utils/blob/master/mjs_fs/api_string.js
+dde0f368803aa31f13b3b040fb4092edc6e6cd42 
