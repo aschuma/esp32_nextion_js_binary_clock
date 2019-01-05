@@ -1,26 +1,5 @@
 load('api_timer.js');
-
-/**
-  * Modified copy of tkopacki/mongoose-string-utils/api_string.js
-  */
-let _splitString = function (string, delimeter) {
-  delimeter = (delimeter === undefined ? ' ' : delimeter);
-  string += delimeter;
-  let counter = 0;
-  let buffer = "";
-  let result = [];
-  for (let idx = 0; idx < string.length; idx++) {
-    if (string[idx] === delimeter) {
-      if (buffer !== '') {
-        result[counter++] = buffer;
-      }
-      buffer = "";
-    } else {
-      buffer += string[idx];
-    }
-  }
-  return result;
-};
+load('strings.js');
 
 let LocalTime = function () {
 
@@ -29,7 +8,7 @@ let LocalTime = function () {
 
       let now = Timer.now();
       let timestamp = Timer.fmt("%H:%M:%S", now);
-      let timestampParts = _splitString(timestamp, ":");
+      let timestampParts = Strings.split(timestamp, ":");
 
       let struct = {
         hours: JSON.parse(timestampParts[0]),
@@ -37,7 +16,6 @@ let LocalTime = function () {
         seconds: JSON.parse(timestampParts[2])
       };
 
-      print('now:', JSON.stringify(struct));
       return struct;
     }
   };

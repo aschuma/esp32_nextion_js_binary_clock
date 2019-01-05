@@ -28,8 +28,7 @@ let LocalTimeModel = function () {
           _digit2bin(tsStruct.seconds % 10)
         ]
       };
-
-      print('model:', JSON.stringify(tsModel));
+      
       return tsModel;
     }
   }
