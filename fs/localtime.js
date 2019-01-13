@@ -4,6 +4,16 @@ load('strings.js');
 let LocalTime = function () {
 
   return {
+    midnight: function () {
+    
+      let struct = {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    
+      return struct;
+    },
     now: function () {
 
       let now = Timer.now();
