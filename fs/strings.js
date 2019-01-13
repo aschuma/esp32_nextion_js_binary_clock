@@ -3,8 +3,8 @@
   */
 
 let Strings = {
-    tostr : function(number) {
-        return JSON.stringify(number);
+    tostr : function(data) {
+        return typeof data === 'string' ? data : JSON.stringify(data);
     },
     ltrim: function(string) {
         let idx = 0;
