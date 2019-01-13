@@ -29,7 +29,12 @@ let LocalTimeModel = {
   },
 
   midnightModel: function () {
-    return LocalTimeModel._matrix(LocalTime.midnight());
+    let struct = {
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    };
+    return LocalTimeModel._matrix(struct);
   },
 
   model: function () {
