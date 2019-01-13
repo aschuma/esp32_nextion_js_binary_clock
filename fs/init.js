@@ -37,13 +37,14 @@ Timer.set(1000 /* milliseconds */, Timer.REPEAT, function () {
       let cell = column[j];
       if (prevMatrix[i][j] !== cell) {
         let posx = 50 * i;
-        let posy = 9 + 60 * (3 - j);
+        let posy = 20 + 50 * (3 - j);
         if (cell) {
           // Display.cirs(posx, posy, 21, 1499);
           Display.fill(posx, posy, 42, 42, 1499);
         } else {
           // Display.cir(posx, posy, 21, 'BLACK');
           Display.fill(posx, posy, 42, 42, 'BLACK');
+          // Display.draw(posx, posy, 42, 42, 1499);
         }
       }
     }
