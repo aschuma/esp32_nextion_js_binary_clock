@@ -1,4 +1,4 @@
-This are the setup instruction for the 
+This are the setup instructions for the 
 "Nextion 2.8" TFT 320x240 HMI" display.
 
 To flash project firmware from SD card to the display
@@ -22,5 +22,3 @@ Links:
 * https://www.itead.cc/wiki/Nextion_Editor_Quick_Start_Guide
 
 * https://www.itead.cc/wiki/Nextion_HMI_Solution
-
-Credits
