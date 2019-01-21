@@ -1,0 +1,28 @@
+author: aschuma
+description: A JS-enabled demo Mongoose OS firmware
+version: 1.0
+manifest_version: 2017-05-18
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+# ToDo
+# - https://github.com/mongoose-os-apps/wifi-setup-web
+# - Disable WEB-UI
+config_schema:
+  - ["i2c.enable", false]
+  - ["mqtt.enable", false]
+  - ["wifi.sta.enable",true]
+  - ["wifi.ap.enable", false]
+  - ["sys.tz_spec", "CET-1CEST,M3.5.0,M10.5.0/3"]
+
+tags:
+  - js
+
+filesystem:
+  - fs
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/boards
+  - origin: https://github.com/mongoose-os-libs/js-demo-bundle
+  - origin: https://github.com/mongoose-os-libs/sntp

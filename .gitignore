@@ -1,4 +1,5 @@
-deploy.sh
-build
-deps
-fs/init.js_
+src/mos/deploy.sh
+src/mos/build
+src/mos/deps
+src/mos/fs/init.js_
+
