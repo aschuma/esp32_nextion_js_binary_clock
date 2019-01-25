@@ -1,6 +1,6 @@
-# ESP32/Nextion powered Binary Clock 
+# ESP32 and Nextion powered Binary Clock 
 
-This is a Javascript demo Mongoose OS app. The aim of this project is to demonstrates how to drive a Nextion HMI display from an ESP 32 device.
+This is a Javascript demo Mongoose OS app. The aim of this project is to demonstrates how to drive a Nextion HMI display from an ESP32 device.
 
 Here is what you get when you deploy the application on your ESP32 board and your Nextion display:
 
