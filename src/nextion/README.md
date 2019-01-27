@@ -1,3 +1,5 @@
+# Nextion Setup
+
 This are the setup instructions for the 
 "Nextion 2.8" TFT 320x240 HMI" display.
 
