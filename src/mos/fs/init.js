@@ -4,41 +4,82 @@ load('api_esp32.js');
 load('localtimemodel.js');
 load('display.js');
 
+let displayWidth = 320;
+let displayHeight = 240;
+let cellWidth = 50;
+let numberXCells = 6;
+let numberYCells = 4;
+let margin = 4;
+let elementWidth = cellWidth - 2 * margin;
+
 let uartNo = 1;
 Display.init(uartNo, {
   baudRate: 115200,
   esp32: {
     gpio: {
       rx: 16,
-      tx: 17,
+      tx: 17
     },
   },
 });
 
-Display.cls();
+Display.rest();
 
-function paint(matrix, prevMatrix) {
+function cellPosition(xIndex, yIndex) {
+  let xOffset = (displayWidth - cellWidth * numberXCells) / 2;
+  let yOffset = (displayHeight - cellWidth * numberYCells) / 2;
+
+  return {
+    x: displayWidth - (xOffset + xIndex * cellWidth + cellWidth / 2),
+    y: displayHeight - (yOffset + yIndex * cellWidth + cellWidth / 2)
+  }
+}
+
+function renderCell(x, y, mode) {
+  let colorBlue = 1499;
+  let colorGray = 10565;
+
+  let point = cellPosition(x, y);
+  let x = point.x - elementWidth / 2 + margin;
+  let y = point.y - elementWidth / 2 + margin;
+  if (mode) {
+    Display.fill(x, y, elementWidth, elementWidth, colorBlue);
+    // Display.cirs(point.x, point.y, elementWidth / 2, colorBlue);
+  } else {
+    Display.fill(x + 1, y + 1, elementWidth - 2, elementWidth - 2, colorGray);
+    // Display.cirs(point.x, point.y, (elementWidth - 2) / 2, colorGray);
+  }
+}
+
+function renderModel(matrix, prevMatrix) {
+
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
+
       let cell = matrix[i][j];
       let prevCell = prevMatrix ? prevMatrix[i][j] : null;
+
+      if (prevCell === null) {
+        renderCell(i, j, true);
+        renderCell(i, j, false);
+      }
+
       if (cell !== prevCell) {
-        let posx = 50 * i;
-        let posy = 20 + 50 * (3 - j);
-        if (cell) {
-          Display.fill(posx, posy, 42, 42, 1499);
-        }
-        else {
-          Display.fill(posx, posy, 42, 42, 10565);
-        }
+        renderCell(i, j, cell);
       }
     }
   }
 }
 
-let prevMatrix = null;
+let prevModel = null;
 Timer.set(1000 /* milliseconds */, Timer.REPEAT, function () {
-  let matrix = LocalTimeModel.model().matrix;
-  paint(matrix,prevMatrix);
-  prevMatrix = matrix;
+
+  if (!prevModel) {
+    Display.cls();
+  }
+
+  let model = LocalTimeModel.model();
+  renderModel(model, prevModel);
+  prevModel = model;
+  
 }, null);

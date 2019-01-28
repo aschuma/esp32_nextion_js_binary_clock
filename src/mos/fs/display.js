@@ -101,7 +101,12 @@ let Display = {
   },
   cirs: function (x, y, r, color) {
     Display.execute('cirs', x, y, r, color);
+  },
+  com_star: function () {
+    Display.execute('com_star');
+  },
+  com_stop: function () {
+    Display.execute('com_stop');
   }
-
 };
 
