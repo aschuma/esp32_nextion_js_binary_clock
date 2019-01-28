@@ -15,22 +15,17 @@ let LocalTimeModel = {
   },
 
   _matrix: function (tsStruct) {
-    let tsModel = {
-      time: tsStruct,
-      matrix: [
-        LocalTimeModel._digit2bin(tsStruct.hours / 10, 2),
-        LocalTimeModel._digit2bin(tsStruct.hours % 10),
-        LocalTimeModel._digit2bin(tsStruct.minutes / 10, 3),
-        LocalTimeModel._digit2bin(tsStruct.minutes % 10),
-        LocalTimeModel._digit2bin(tsStruct.seconds / 10, 3),
-        LocalTimeModel._digit2bin(tsStruct.seconds % 10)
-      ]
-    };
-    return tsModel;
+    return [
+      LocalTimeModel._digit2bin(tsStruct.seconds % 10),
+      LocalTimeModel._digit2bin(tsStruct.seconds / 10, 3),
+      LocalTimeModel._digit2bin(tsStruct.minutes % 10),
+      LocalTimeModel._digit2bin(tsStruct.minutes / 10, 3),
+      LocalTimeModel._digit2bin(tsStruct.hours % 10),
+      LocalTimeModel._digit2bin(tsStruct.hours / 10, 2)
+    ];
   },
 
   model: function () {
     return LocalTimeModel._matrix(LocalTime.now());
   }
 };
-
