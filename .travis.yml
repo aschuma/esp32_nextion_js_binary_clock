@@ -1,0 +1,17 @@
+os: [ linux ]
+dist: xenial
+sudo: enabled
+language: c
+
+# Install mos tool
+addons:
+  apt:
+    sources:
+      - sourceline: "ppa:mongoose-os/mos"
+    packages:
+      - mos-latest
+
+before_script: cd src/mos/
+script:
+  - mos version
+  - mos build --local --clean --platform esp32

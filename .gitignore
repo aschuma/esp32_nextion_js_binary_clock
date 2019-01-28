@@ -1,5 +1,7 @@
 src/mos/deploy.sh
 src/mos/build
 src/mos/deps
+.history
+
 src/mos/fs/init.js_
 
