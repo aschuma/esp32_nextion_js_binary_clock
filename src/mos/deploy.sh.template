@@ -6,10 +6,5 @@ do
 done									
 									
 mos config-set \
-   wifi.sta.enable=true \
-   wifi.ap.enable=false \
    wifi.sta.ssid='ssid' wifi.sta.pass=secret \
-   sys.tz_spec='CET-1CEST,M3.5.0,M10.5.0/3' \
-   mqtt.enable=false 
-
 
