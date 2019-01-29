@@ -9,7 +9,7 @@ let displayHeight = 240;
 let cellWidth = 50;
 let numberXCells = 6;
 let numberYCells = 4;
-let margin = 4;
+let margin = 6;
 let elementWidth = cellWidth - 2 * margin;
 
 let uartNo = 1;
@@ -23,8 +23,6 @@ Display.init(uartNo, {
   },
 });
 
-Display.rest();
-
 function cellPosition(xIndex, yIndex) {
   let xOffset = (displayWidth - cellWidth * numberXCells) / 2;
   let yOffset = (displayHeight - cellWidth * numberYCells) / 2;
@@ -35,11 +33,11 @@ function cellPosition(xIndex, yIndex) {
   }
 }
 
-function renderCell(x, y, mode) {
+function renderCell(xIndex, yIndex, mode) {
   let colorBlue = 1499;
   let colorGray = 10565;
 
-  let point = cellPosition(x, y);
+  let point = cellPosition(xIndex, yIndex);
   let x = point.x - elementWidth / 2 + margin;
   let y = point.y - elementWidth / 2 + margin;
   if (mode) {
@@ -81,5 +79,6 @@ Timer.set(1000 /* milliseconds */, Timer.REPEAT, function () {
   let model = LocalTimeModel.model();
   renderModel(model, prevModel);
   prevModel = model;
-  
+
 }, null);
+
