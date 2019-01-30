@@ -21,8 +21,8 @@ Here is what you get when you deploy the application on your ESP32 board and you
 ```git clone https://github.com/aschuma/esp32_nextion_js_binary_clock.git```
 
 ## Prepare the Nextion display
-This is an optional step. It might work with any preparation of the Nextion display. 
-If not change to ```src/nextion``` directory and follow the instructions in the ```README.md``` file.
+This is an optional step. It might work without any preparation of the Nextion display. 
+If not, change to ```src/nextion``` directory and follow the instructions in the ```README.md``` file.
 
 ## Wire the hardware
 ```
