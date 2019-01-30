@@ -9,7 +9,9 @@ mongoose_os_version: ${mos.version}
 config_schema:
   - ["i2c.enable", false]
   - ["mqtt.enable", false]
-  - ["wifi.sta.enable",true]
+  - ["wifi.sta.ssid", "my-wifi-ssid"]
+  - ["wifi.sta.pass", "my-wifi-secret"] 
+  - ["wifi.sta.enable", true]
   - ["wifi.ap.enable", false]
   - ["http.enabled", false]
   - ["bt.enabled", false]
