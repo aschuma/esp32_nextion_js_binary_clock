@@ -1,6 +1,6 @@
 # ESP32 and Nextion powered Binary Clock 
 
-This is a Javascript demo Mongoose OS app. The aim of this project is to demonstrates how to drive a Nextion HMI display from an ESP32 device.
+This is a Javascript demo Mongoose OS app. The aim of this project is to demonstrate how to drive a Nextion HMI display from an ESP32 device.
 
 Here is what you get when you deploy the application on your ESP32 board and your Nextion display:
 
@@ -41,7 +41,7 @@ ESP32 GPIO17  <-> Nextion RX
 
 ### Check mos.yml
 * Alter WiFi settings (ESP32 only support 2.4Ghz networks)
-* Adjust the timezone ```sys.tz_spec```. Please consult google to find the value for your local time zone.
+* Adjust the timezone ```sys.tz_spec```. Please consult Google to find the value for your local time zone.
 
 ### Build
 This could take some time. Be patient.
@@ -60,7 +60,7 @@ This could take some time. Be patient.
 
 # Finally
 
-Be aware that my primary coding language is not javascript and I'am not an ESP32 or Mongoose OS expert at all.  I'am still learning ESP32 development.
+Be aware that my primary coding language is not javascript and I'm not an ESP32 or Mongoose OS expert at all.  I'm still learning ESP32 development.
 
 Please feel free to issue a bug report or submit a PR. Any helping hand is welcome.
 
