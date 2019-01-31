@@ -13,6 +13,7 @@ let margin = 6;
 let elementWidth = cellWidth - 2 * margin;
 
 let uartNo = 1;
+
 Display.init(uartNo, {
   baudRate: 115200,
   esp32: {
@@ -23,13 +24,36 @@ Display.init(uartNo, {
   },
 });
 
-function cellPosition(xIndex, yIndex) {
-  let xOffset = (displayWidth - cellWidth * numberXCells) / 2;
-  let yOffset = (displayHeight - cellWidth * numberYCells) / 2;
+let prevModel = null;
+Timer.set(1000 /* milliseconds */, Timer.REPEAT, function () {
 
-  return {
-    x: displayWidth - (xOffset + xIndex * cellWidth + cellWidth / 2),
-    y: displayHeight - (yOffset + yIndex * cellWidth + cellWidth / 2)
+  if (!prevModel) {
+    Display.cls();
+  }
+
+  let model = LocalTimeModel.model();
+  renderModel(model, prevModel);
+  prevModel = model;
+
+}, null);
+
+
+function renderModel(matrix, prevMatrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+
+      let cell = matrix[i][j];
+      let prevCell = prevMatrix ? prevMatrix[i][j] : null;
+
+      if (prevCell === null) {
+        renderCell(i, j, true);
+        renderCell(i, j, false);
+      }
+
+      if (cell !== prevCell) {
+        renderCell(i, j, cell);
+      }
+    }
   }
 }
 
@@ -49,36 +73,12 @@ function renderCell(xIndex, yIndex, mode) {
   }
 }
 
-function renderModel(matrix, prevMatrix) {
+function cellPosition(xIndex, yIndex) {
+  let xOffset = (displayWidth - cellWidth * numberXCells) / 2;
+  let yOffset = (displayHeight - cellWidth * numberYCells) / 2;
 
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-
-      let cell = matrix[i][j];
-      let prevCell = prevMatrix ? prevMatrix[i][j] : null;
-
-      if (prevCell === null) {
-        renderCell(i, j, true);
-        renderCell(i, j, false);
-      }
-
-      if (cell !== prevCell) {
-        renderCell(i, j, cell);
-      }
-    }
+  return {
+    x: displayWidth - (xOffset + xIndex * cellWidth + cellWidth / 2),
+    y: displayHeight - (yOffset + yIndex * cellWidth + cellWidth / 2)
   }
 }
-
-let prevModel = null;
-Timer.set(1000 /* milliseconds */, Timer.REPEAT, function () {
-
-  if (!prevModel) {
-    Display.cls();
-  }
-
-  let model = LocalTimeModel.model();
-  renderModel(model, prevModel);
-  prevModel = model;
-
-}, null);
-
