@@ -13,8 +13,8 @@ config_schema:
   - ["wifi.sta.pass", "my-wifi-secret"] 
   - ["wifi.sta.enable", true]
   - ["wifi.ap.enable", false]
-  - ["http.enabled", false]
-  - ["bt.enabled", false]
+  - ["http.enable", false]
+  - ["bt.enable", false]
   - ["sys.tz_spec", "CET-1CEST,M3.5.0,M10.5.0/3"]
 
 tags:
