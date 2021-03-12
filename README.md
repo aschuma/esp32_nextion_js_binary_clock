@@ -69,7 +69,7 @@ Please feel free to issue a bug report or submit a PR. Any helping hand is welco
 - [Espressif ESP32](https://www.espressif.com/en/products/hardware/esp32/overview)
 - [Nextion 2.8" TFT 320x240 HMI](https://www.itead.cc/nextion-nx3224t028-1934.html)
 - [Mongoose OS](https://mongoose-os.com/mos.html)
-- [Mongoose OS quick start guide](https://mongoose-os.com/docs/quickstart/setup.md)
+- [Mongoose OS quick start guide](https://mongoose-os.com/docs/mongoose-os/quickstart/setup.md)
 - [mJS - Embedded JavaScript engine for C/C++](https://github.com/cesanta/mjs)
 - https://www.itead.cc/wiki/Nextion_Instruction_Set
 - https://www.itead.cc/wiki/Nextion_Editor_Quick_Start_Guide
