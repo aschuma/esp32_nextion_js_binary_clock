@@ -14,8 +14,8 @@ Here is what you get when you deploy the application on your ESP32 board and you
 * Breadboard, wires, USB data cable ...
 
 ## Get the software
-* For the mos tool, please follow the Mongoose OS [instructions](https://mongoose-os.com/docs/quickstart/setup.md).
-* For the nextion editor (optional), check this [hint](https://www.itead.cc/wiki/Nextion_Editor_Quick_Start_Guide) (Windows only). 
+* For the mos tool, please follow the Mongoose OS [instructions](https://mongoose-os.com/docs/mongoose-os/quickstart/setup.md).
+* For the nextion editor (optional), check this [hint](https://nextion.tech/editor_guide/) (Windows only). 
 
 ## Clone the repository
 ```git clone https://github.com/aschuma/esp32_nextion_js_binary_clock.git```
