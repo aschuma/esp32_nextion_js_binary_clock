@@ -67,10 +67,10 @@ Please feel free to issue a bug report or submit a PR. Any helping hand is welco
 
 # Useful links:
 - [Espressif ESP32](https://www.espressif.com/en/products/hardware/esp32/overview)
-- [Nextion 2.8" TFT 320x240 HMI](https://www.itead.cc/nextion-nx3224t028-1934.html)
+- [Nextion 2.8" TFT 320x240 HMI](https://itead.cc/product/nx3224t028-nextion-2-8-basic-series-hmi-touch-display/)
 - [Mongoose OS](https://mongoose-os.com/mos.html)
 - [Mongoose OS quick start guide](https://mongoose-os.com/docs/mongoose-os/quickstart/setup.md)
 - [mJS - Embedded JavaScript engine for C/C++](https://github.com/cesanta/mjs)
-- https://www.itead.cc/wiki/Nextion_Instruction_Set
-- https://www.itead.cc/wiki/Nextion_Editor_Quick_Start_Guide
+- https://wiki.iteadstudio.com/index.php?title=Nextion_Instruction_Set&oldid
+- https://nextion.tech/editor_guide/
 - [pynextion - A Python library for Nextion smart display management. A little bit out of scope but helpful to see how to control Nextion via UART](https://github.com/aschuma/pynextion)
