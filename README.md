@@ -10,7 +10,7 @@ Here is what you get when you deploy the application on your ESP32 board and you
 
 ## Required hardware
 * [ESP32 Device](https://www.aliexpress.com/wholesale?catId=0&initiative_id=AS_20190129143241&SearchText=esp32+development+board)
-* [Nextion 2.8" TFT 320x240 HMI](https://www.itead.cc/nextion-nx3224t028-1934.html)
+* [Nextion 2.8" TFT 320x240 HMI](https://itead.cc/product/nx3224t028-nextion-2-8-basic-series-hmi-touch-display/)
 * Breadboard, wires, USB data cable ...
 
 ## Get the software
